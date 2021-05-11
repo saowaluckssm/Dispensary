@@ -1,0 +1,123 @@
+.container {
+  max-width: $website-width;
+  padding: 0 1.5rem;
+  margin: auto;
+  overflow: hidden;
+}
+
+// Buttons
+
+%btn-shared {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn {
+  &-main {
+    @extend %btn-shared;
+    color: #333;
+    background-color: $main-color;
+  }
+  &-light {
+    @extend %btn-shared;
+    color: #333;
+    background-color: $light-color;
+  }
+  &-dark {
+    @extend %btn-shared;
+    color: #fff;
+    background-color: $dark-color;
+  }
+}
+
+button[class^="btn-"]:hover,
+a[class^="btn-"]:hover,
+input[class^="btn-"]:hover {
+  background-color: $main-color;
+}
+
+.lead {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section-header {
+  padding: 10%;
+}
+
+// Flex Column
+
+.flex-column {
+  margin-bottom: 20px;
+  // margin-bottom: 100px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 100%;
+      flex: 1;
+
+      &-1 {
+        height: 100%;
+      }
+      &-2 {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        height: 100%;
+
+        p {
+          font-size: 20px;
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}
+
+.flex-box {
+  display: flex;
+  flex-direction: row;
+  // flex-wrap: wrap;
+  padding-bottom: 5rem;
+
+  .box {
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+
+    img {
+      width: 320px;
+      height: 300px;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+    .btn-light {
+      border-radius: 3px;
+      padding: 5px 8px;
+      margin-top: 20px;
+    }
+  }
+}

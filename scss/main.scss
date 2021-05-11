@@ -1,0 +1,290 @@
+@import "config";
+@import "utillities";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "PT Sans", sans-serif;
+  line-height: 1.6;
+  background: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Ubuntu", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+// Logo
+#logo {
+  // width: 100px;
+  font-size: 2.3rem;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+// Main Nav
+#main-nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100px;
+  padding-top: 1rem;
+
+  ul {
+    display: flex;
+  }
+
+  li {
+    padding: 1rem 1.5rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    border-bottom: 3px transparent solid;
+    padding-bottom: 0.5rem;
+    transition: border-color 0.5s;
+
+    &:hover {
+      border-color: $medium-color;
+    }
+    &.current {
+      border-color: $main-color;
+    }
+  }
+}
+
+// Header
+
+#header {
+  // Header Home
+  &-home {
+    background: url("../dist/img/ss.jpg") no-repeat center right/cover;
+    // background: $bg-image no-repeat center right/cover;
+    height: 100vh;
+    color: #fff;
+    position: relative;
+
+    * {
+      z-index: 10;
+    }
+
+    // Header Content
+
+    .header-content {
+      // text-align: center;
+      // padding: 20%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding-top: 20%;
+
+      h1 {
+        font-size: 4rem;
+        line-height: 1.2;
+      }
+    }
+  }
+
+  &-about {
+    background: $nav-image no-repeat center center/cover;
+    height: 110px;
+    color: #fff;
+  }
+}
+
+#header-home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.3;
+}
+
+// #header-home * {
+//   z-index: 10;
+// }
+
+#home {
+  &-a {
+    background: #fff;
+    color: #333;
+    margin-bottom: 150px;
+
+    h1 {
+      font-size: 28px;
+    }
+  }
+  &-b {
+    background: #0e0504;
+    color: #fff;
+  }
+
+  &-d {
+    background: url("../dist/img/ss2.jpg") no-repeat center center/cover;
+    height: 70vh;
+    color: #fff;
+    text-align: center;
+
+    .promotion {
+      text-align: center;
+      padding: 10%;
+
+      h2 {
+        font-size: 2.2rem;
+      }
+      p {
+        margin-bottom: 2.5rem;
+      }
+    }
+  }
+}
+
+// about
+
+#about {
+  &-a {
+    margin-bottom: 200px;
+
+    .column-2 {
+      margin-left: 25px;
+
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &-b {
+    background: #0e0504;
+    color: #fff;
+    margin-bottom: 200px;
+  }
+  &-c {
+    margin-bottom: 150px;
+    .column-2 {
+      margin-left: 25px;
+    }
+  }
+}
+
+// Strains
+
+#showcase {
+  .box {
+    border: #f4f4f4 3px solid;
+    border-radius: 10px;
+    padding: 20px 0;
+    cursor: pointer;
+
+    &:hover {
+      border: $main-color 3px solid;
+
+      a {
+        background: $main-color;
+      }
+    }
+  }
+}
+// contact form
+
+#contact-a {
+  text-align: center;
+  .section-header {
+    padding: 5%;
+  }
+
+  .text-fields {
+    display: grid;
+    grid-template-areas:
+      "name email"
+      "subject phone"
+      "message message";
+    grid-gap: 1.2rem;
+    margin-bottom: 1.2rem;
+
+    .name-input {
+      grid-area: name;
+    }
+    .subject-input {
+      grid-area: subject;
+    }
+    .email-input {
+      grid-area: email;
+    }
+    .phone-input {
+      grid-area: phone;
+    }
+    .message-input {
+      grid-area: message;
+      height: 100px;
+    }
+    .text-input {
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  button[type="submit"] {
+    width: 50%;
+    margin: 2rem 0 5rem;
+  }
+
+  .contact-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}
+
+// footer
+
+footer {
+  text-align: center;
+  padding: 30px 0;
+  height: 150px;
+  .social {
+    padding-bottom: 12px;
+    a {
+      color: #333;
+      margin-left: 15px;
+
+      :hover {
+        color: $main-color;
+      }
+    }
+  }
+}
+
+// media
+
+@import "media";
